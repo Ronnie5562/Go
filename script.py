@@ -1,8 +1,9 @@
 import requests
 
 response = requests.get("https://prettyprinted.com")
+# response = requests.get("https://thesuperkidsschool.org/")
 
-with open("indeex.html", "w") as f:
+with open("schools.html", "w", encoding='utf-8') as f:
     f.write(response.text)
 
 if response:
