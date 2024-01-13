@@ -7,12 +7,15 @@ import (
 )
 
 func main() {
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Println("Rate our Pizza out of a 5")
+	welcome := "Welcome to user input Program"
+	fmt.Println(welcome)
 
-	// comma (ok || err)
-	input, err := reader.ReadString('\n')
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Println("Enter Your rating of our pizza: ")
+
+	// comma ok || error ok
+	input, _ := reader.ReadString('\n')
 
 	fmt.Println("Thanks for rating, ", input)
-	fmt.Println(err)
+	fmt.Printf("Type of this rating is %T", input)
 }
