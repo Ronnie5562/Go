@@ -18,6 +18,9 @@ func main() {
 		"James":      42,
 		"Moneypenny": 32,
 	}
+
+	fmt.Println(m["Moneypenny"])
+
 	for k, v := range m {
 		fmt.Println("ranging over a map", k, v)
 	}
