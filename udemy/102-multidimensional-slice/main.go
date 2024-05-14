@@ -8,6 +8,6 @@ func main() {
 	fmt.Println(jb)
 	fmt.Println(jm)
 
-	xxs := [][]string{jb, jm}
-	fmt.Println(xxs)
+	two_dimensional_slice := [][]string{jb, jm}
+	fmt.Println(two_dimensional_slice)
 }

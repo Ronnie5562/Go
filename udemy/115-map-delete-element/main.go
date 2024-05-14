@@ -13,7 +13,7 @@ func main() {
 
 	fmt.Println(am)
 	fmt.Printf("%#v\n", am)
-	
+
 	an := make(map[string]int)
 	an["Lucas"] = 28
 	an["Steph"] = 37
@@ -26,9 +26,10 @@ func main() {
 
 	fmt.Println("--- accessing keys that don't exist")
 	delete(an, "Georage") // won't panic
-	fmt.Println(an["Georgey"]) // won't panice
+	fmt.Println(an["Georgey"]) // won't panic
+	fmt.Printf("James Age: %#v\n", an["James"]) // James does not exist and the compiler won't panic [instead it prints 0 - which is the zero-value for type int]
 	fmt.Println("------------------------")
-	
+
 	// for range over a MAP
 	for k, v := range an {
 		fmt.Println(k, v)
@@ -44,7 +45,7 @@ func main() {
 
 	// for range with a SLICE
 	xi := []int{42,43,44}
-		
+
 	for i, v := range xi {
 		fmt.Println(i, v)
 	}
@@ -56,5 +57,4 @@ func main() {
 	for i := range xi {
 		fmt.Println(i)
 	}
-
 }

@@ -8,11 +8,11 @@ func main() {
 
 	fmt.Println("a ", a)
 	fmt.Println("b ", b)
-	fmt.Println("--------------")
+	fmt.Println("------------")
 
 	a[0] = 7
 
 	fmt.Println("a ", a)
 	fmt.Println("b ", b)
-	fmt.Println("--------------")
+	fmt.Println("------------")
 }

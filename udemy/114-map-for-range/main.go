@@ -13,7 +13,7 @@ func main() {
 
 	fmt.Println(am)
 	fmt.Printf("%#v\n", am)
-	
+
 	an := make(map[string]int)
 	an["Lucas"] = 28
 	an["Steph"] = 37
@@ -21,23 +21,28 @@ func main() {
 	fmt.Println(an)
 	fmt.Printf("%#v\n", an)
 	fmt.Println(len(an))
-	
+
 	// for range over a MAP
-	for k, v := range an {
-		fmt.Println(k, v)
+	for key, value := range an {
+		fmt.Println(key, value)
 	}
 
-	for _, v := range an {
-		fmt.Println(v)
+	for _, value := range an {
+		fmt.Println(value)
 	}
 
-	for k := range an {
-		fmt.Println(k)
+	for key := range an {
+		fmt.Println(key)
+	}
+
+	for key, value := range an {
+		fmt.Printf("Key: %#v\n", key)
+		fmt.Printf("Value: %#v\n", value)
 	}
 
 	// for range with a SLICE
 	xi := []int{42,43,44}
-		
+
 	for i, v := range xi {
 		fmt.Println(i, v)
 	}
