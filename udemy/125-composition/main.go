@@ -23,7 +23,6 @@ func main() {
 		first: "James",
 		last:  "Bond",
 		age:   32,
-
 	}
 
 	p2 := person{

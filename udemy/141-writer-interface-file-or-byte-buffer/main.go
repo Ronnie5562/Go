@@ -17,19 +17,20 @@ func (p person) writeOut(w io.Writer) {
 }
 
 func main() {
-	p := person{
-		first: "Jenny",
+	person_1 := person{
+		first: "Dotun",
 	}
 
-	f, err := os.Create("output.txt")
+	f, err := os.Create("Dotun.txt")
 	if err != nil {
-		log.Fatalf("error %s", err)
+		log.Fatalf("Error %s", err)
 	}
 	defer f.Close()
 
 	var b bytes.Buffer
 
-	p.writeOut(f)
-	p.writeOut(&b)
+	person_1.writeOut(f)
+	person_1.writeOut(&b)
+
 	fmt.Println(b.String())
 }

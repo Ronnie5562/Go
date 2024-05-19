@@ -3,19 +3,20 @@ package main
 import "fmt"
 
 func main() {
-	x := sum(1, 2, 3, 4, 5, 6, 7, 8, 9)
+	x := sum(2, 1, 2, 3, 4, 5, 6, 7, 8, 9)
 	fmt.Println("The sum is", x)
 }
 
 // func (r receiver) identifier(p parameters) (return(s)) {code}
 
-func sum(ii ...int) int {
-	fmt.Println(ii)
-	fmt.Printf("%T\n", ii)
+func sum(first int, variadic ...int) int {
+	fmt.Println(variadic)
+	fmt.Printf("%T\n", variadic)
 
 	n := 0
-	for _, v := range ii {
-		n += v
+	for _, value := range variadic {
+		n += value
 	}
-	return n
+
+	return first * n
 }

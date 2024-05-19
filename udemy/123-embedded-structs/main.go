@@ -2,41 +2,48 @@ package main
 
 import "fmt"
 
-type person struct {
-	first string
-	last  string
-	age   int
+type Person struct {
+	firstName string
+	lastName  string
+	age       int
 }
 
-type secretAgent struct {
-	person
-	ltk bool
-	first string
+type Organization struct {
+	name    string
+	country string
+}
+
+type SecretAgent struct {
+	profile       Person
+	licenseToKill bool
+	organization  Organization
 }
 
 func main() {
-	sa1 := secretAgent{
-		person: person{
-			first: "James",
-			last:  "Bond",
-			age:   32,
+	mossad := Organization{
+		name:    "Mossad",
+		country: "Israel",
+	}
+
+	person_1 := Person{
+		firstName: "John",
+		lastName:  "Doe",
+		age:       100,
+	}
+
+	secret_agent_1 := SecretAgent{
+		profile: Person{
+			firstName: "Tamar",
+			lastName:  "Rabinya",
+			age:       27,
 		},
-		first: "ETHAN HAWK",
-		ltk: true,
+		licenseToKill: true,
+		organization:  mossad,
 	}
 
-	p2 := person{
-		first: "Jenny",
-		last:  "Moneypenny",
-		age:   27,
-	}
+	fmt.Printf("%T, %#v, %v\n", person_1, person_1, person_1)
+	fmt.Printf("%T, %#v, %v\n", secret_agent_1, secret_agent_1, secret_agent_1)
 
-	fmt.Println(sa1)
-	fmt.Println(p2)
-
-	fmt.Printf("%T \t %#v\n", sa1, sa1)
-
-	fmt.Println(sa1.first, sa1.last, sa1.age)
-	fmt.Println(sa1.first, sa1.last, sa1.age, sa1.ltk, sa1.person)
-	fmt.Println(sa1.first, sa1.person.first)
+	fmt.Println(person_1.firstName, person_1.age)
+	fmt.Println(secret_agent_1.profile.firstName, secret_agent_1.organization.name)
 }

@@ -4,30 +4,28 @@ import "fmt"
 
 func main() {
 	foo()
+	bar("Ronald")
+	greet := aloha("Ronald")
+	fmt.Println(greet)
 
-	bar("Todd")
-
-	s := aloha("Todd")
-	fmt.Println(s)
-
-	s1, n := dogYears("Todd", 40)
-	fmt.Println(s1, n)
+	s1, age := dogYears("Todd", 5)
+	fmt.Println(s1, age)
 }
 
 func foo() {
 	fmt.Println("I am from foo")
 }
 
-func bar(s string) {
-	fmt.Println("My name is", s)
+func bar(name string) {
+	fmt.Println("My name is:", name)
 }
 
-func aloha(s string) string {
-	return fmt.Sprint("They call me Mr. ", s)
+func aloha(name string) string {
+	return fmt.Sprint("Aloha ", name)
 }
 
 func dogYears(name string, age int) (string, int) {
-	age *= 7
+	age *= age
 	return fmt.Sprint(name, " is this old in dog years "), age
 }
 

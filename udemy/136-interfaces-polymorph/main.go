@@ -2,22 +2,26 @@ package main
 
 import "fmt"
 
-type person struct {
-	first string
+type Person struct {
+	firstName string
+	lastName  string
 }
 
-type secretAgent struct {
-	person
-	ltk bool
+type SecretAgent struct {
+	profile Person
+	licensetokill bool
 }
 
-func (p person) speak() {
-	fmt.Println("I am", p.first)
+
+func (p Person) speak() {
+	fmt.Println("I am", p.lastName, p.firstName)
 }
 
-func (sa secretAgent) speak() {
-	fmt.Println("I am a secret agent", sa.first)
+
+func (sa SecretAgent) speak() {
+	fmt.Println("I am secret Agent", sa.profile.firstName)
 }
+
 
 type human interface {
 	speak()
@@ -27,23 +31,26 @@ func saySomething(h human) {
 	h.speak()
 }
 
+
 func main() {
-	sa1 := secretAgent{
-		person: person{
-			first: "James",
+	secret_agent_1 := SecretAgent{
+		profile: Person{
+			firstName: "Tamar",
+			lastName: "Rabinya",
 		},
-		ltk: true,
+		licensetokill: true,
 	}
 
-	p2 := person{
-		first: "Jenny",
+	person_1 := Person{
+		firstName: "Doe",
+		lastName: "John",
 	}
 
-	// sa1.speak()
-	// p2.speak()
+	// secret_agent_1.speak()
+	// person_1.speak()
 
-	saySomething(sa1)
-	saySomething(p2)
+	saySomething(person_1)
+	saySomething(secret_agent_1)
 }
 
 // func (r receiver) identifier(p parameter(s)) (return(s)) { code }

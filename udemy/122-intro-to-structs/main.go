@@ -2,29 +2,28 @@ package main
 
 import "fmt"
 
-type person struct {
-	first string
-	last  string
-	age   int
+type Person struct {
+	firstName string
+	lastName  string
+	age       int
 }
 
 func main() {
-	p1 := person{
-		first: "James",
-		last:  "Bond",
-		age:   32,
+	person_1 := Person{
+		firstName: "John",
+		lastName:  "Doe",
+		age:       100,
 	}
 
-	p2 := person{
-		first: "Jenny",
-		last:  "Moneypenny",
-		age:   27,
+	person_2 := Person{
+		firstName: "Jane",
+		lastName:  "Henry",
+		age:       200,
 	}
 
-	fmt.Println(p1)
-	fmt.Println(p2)
+	fmt.Printf("%T, %#v, %v\n", person_1, person_1, person_1)
+	fmt.Printf("%T, %#v, %v\n", person_2, person_2, person_2)
 
-	fmt.Printf("%T \t %#v\n", p1, p1)
-
-	fmt.Println(p1.first, p1.last, p1.age)
+	fmt.Println(person_1.firstName, person_1.age)
+	fmt.Println(person_2.firstName, person_2.age)
 }

@@ -61,6 +61,7 @@ func freq(r io.Reader) (map[string]int, error) {
 		word := strings.ToLower(s.Text())
 		wordFreq[word]++
 	}
+
 	if err := s.Err(); err != nil {
 		return nil, err
 	}
@@ -120,7 +121,7 @@ func maxWord(m map[string]int) (string, int, error) {
 		return "", 0, fmt.Errorf("empty map")
 	}
 
-	maxW := ""  // word with max frequency 
+	maxW := ""  // word with max frequency
 	maxF := 0	// max frequency of that word
 
 	for k, v := range m {
@@ -175,5 +176,5 @@ in the go programming language, I have a map with a string and an int. How do I 
 	fmt.Println(m["beautiful"])
 	m["beautiful"]++
 	fmt.Println(m["beautiful"])
-	
+
 */

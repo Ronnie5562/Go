@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	fmt.Printf("%T\n", add)
@@ -12,6 +14,9 @@ func main() {
 
 	y := doMath(42, 16, subtract)
 	fmt.Println(y)
+
+	z := concatenateString("Abimbola", "Ronald", concat)
+	fmt.Println(z)
 }
 
 func doMath(a int, b int, f func(int, int) int) int {
@@ -24,4 +29,12 @@ func add(a int, b int) int {
 
 func subtract(a int, b int) int {
 	return a - b
+}
+
+func concatenateString(first string, last string, f func(string, string) string) string {
+	return f(first, last)
+}
+
+func concat(first string, last string) string {
+	return fmt.Sprint(first, " ", last)
 }

@@ -15,16 +15,15 @@ import (
 // }
 
 func main() {
-	f, err := os.Create("output.txt")
+	f, err := os.Create("Ronald.txt")
 	if err != nil {
-		log.Fatalf("error %s", err)
+		log.Fatalf("Error %s", err)
 	}
 	defer f.Close()
 
-	s := []byte("Hello gophers!")
-
+	s := []byte("Hello Gophers")
 	_, err = f.Write(s)
 	if err != nil {
-		log.Fatalf("error %s", err)
+		log.Fatalf("Error %s", err)
 	}
 }

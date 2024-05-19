@@ -2,25 +2,30 @@ package main
 
 import "fmt"
 
-type person struct {
-	first string
+type Person struct {
+	firstName string
+	lastName  string
 }
 
-func (p person) speak() {
-	fmt.Println("I am", p.first)
+
+func (p Person) speak() {
+	fmt.Println("I am", p.lastName, p.firstName)
 }
+
 
 func main() {
-	p1 := person{
-		first: "James",
-	}
-	
-	p2 := person{
-		first: "Jenny",
+	person_1 := Person{
+		firstName: "James",
+		lastName: "Mary",
 	}
 
-	p1.speak()
-	p2.speak()
+	person_2 := Person{
+		firstName: "Doe",
+		lastName: "John",
+	}
+
+	person_1.speak()
+	person_2.speak()
 }
 
 // func (r receiver) identifier(p parameter(s)) (return(s)) { code }

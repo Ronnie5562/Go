@@ -24,7 +24,7 @@ func main() {
 		title: "West With The Night",
 	}
 
-	var n count = 42
+	var n count = 56
 
 	fmt.Println(b)
 	fmt.Println(n)

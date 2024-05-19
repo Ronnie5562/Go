@@ -29,12 +29,18 @@ func main() {
 	fmt.Println(an["Georgey"]) // won't panice
 	fmt.Println("------------------------")
 
-	// v, ok := an["Lucas"]
-	// if ok {
-	// 	fmt.Println("the value prints",v)
-	// } else {
-	// 	fmt.Println("Key didn't exist")
-	// }
+	v1, ok1 := an["Ronald"]
+	if ok1 {
+		fmt.Println(v1)
+		fmt.Println(ok1)
+		fmt.Println("The key Ronald exists")
+	} else {
+		fmt.Println("The key Ronald doesn't exist")
+		fmt.Println(v1)
+		fmt.Println(ok1)
+		fmt.Println("The key Ronald doesn't exist")
+
+	}
 
 	if v, ok := an["Georgey"]; !ok {
 		fmt.Println("Key didn't exist")

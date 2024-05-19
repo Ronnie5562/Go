@@ -9,22 +9,22 @@ type person struct {
 }
 
 func main() {
-	p1 := struct {
-		first string
-		last  string
-		age   int
+	person_1 := struct {
+		firstName string
+		lastName string
+		age int
 	}{
-		first: "James",
-		last:  "Bond",
-		age:   32,
+		firstName: "Ronnie",
+		lastName: "Golang",
+		age: 100,
 	}
 
-	p2 := person{
+	person_2 := person{
 		first: "Jenny",
 		last:  "Moneypenny",
 		age:   27,
 	}
 
-	fmt.Printf("%T \n", p1)
-	fmt.Printf("%T \n", p2)
+	fmt.Printf("%T \n", person_1)
+	fmt.Printf("%T \n", person_2)
 }

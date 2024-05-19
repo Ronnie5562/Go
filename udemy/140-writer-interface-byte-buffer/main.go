@@ -29,13 +29,15 @@ func main() {
 	// }
 
 	b := bytes.NewBufferString("Hello ")
-	fmt.Println(b.String())
-	b.WriteString("Gophers!")
-	fmt.Println(b.String())
+	fmt.Println(b)
+
+	b.WriteString("Gophers! ")
+	fmt.Println(b)
+
 	b.Reset()
-	b.WriteString("It's Thursday")
-	fmt.Println(b.String())
-	
-	b.Write([]byte("Happy Happy"))
-	fmt.Println(b.String())
+	b.WriteString("Ronald Abimbola is definitely gonna be great 💪💪")
+	fmt.Println(b)
+
+	b.Write([]byte(", Happy Happy"))
+	fmt.Println(b)
 }

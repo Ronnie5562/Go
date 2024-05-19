@@ -12,7 +12,11 @@ func main() {
 	func(s string){
 		fmt.Println("This is an anonymous func showing my name", s)
 	}("Todd")
-	
+
+	func(name string){
+		fmt.Println("My name is: ", name)
+	}("Ronald")
+
 }
 
 func foo() {
@@ -23,4 +27,4 @@ func foo() {
 // func (r receive) identifier(p parameter(s)) (r return(s)) { code }
 
 // an anonymous function
-// func(p parameter(s)) (r return(s)) { code }
+// func(p parameter(s)) (r return(s)) { code } (argument(s))
