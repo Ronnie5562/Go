@@ -7,18 +7,19 @@ import (
 )
 
 func main() {
-	xb, err := readFile("poem.txt")
+	file_data, err := readFile("poem1.txt")
 	if err != nil {
-		log.Fatalf("error in main in readFile: %s", err)
+		log.Fatal(err)
 	}
-	fmt.Println(xb)
-	fmt.Println(string(xb))
+	fmt.Println(file_data)
+	fmt.Println(string(file_data))
 }
 
-func readFile(fileName string) ([]byte, error) {
-	xb, err := os.ReadFile(fileName)
+func readFile(filename string) ([]byte, error) {
+	file_data, err := os.ReadFile(filename)
 	if err != nil {
-		return nil, fmt.Errorf("there was an error in readfile: %s", err)
+		return nil, fmt.Errorf("there was an issue in reading the file")
 	}
-	return xb, nil
+
+	return file_data, nil
 }

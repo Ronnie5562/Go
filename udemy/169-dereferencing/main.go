@@ -15,4 +15,7 @@ func main() {
 	*y = 43
 	fmt.Println(x)
 	fmt.Println(*y)
+
+	x = 44
+	fmt.Println(*y)
 }
