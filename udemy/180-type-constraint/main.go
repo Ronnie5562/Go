@@ -10,6 +10,10 @@ func addF(a, b float64) float64 {
 	return a + b
 }
 
+// func addT[T int | float64](a, b T) T {
+// 	return a + b
+// }
+
 func addT[T int | float64](a, b T) T {
 	return a + b
 }

@@ -5,44 +5,45 @@ import (
 	"math"
 )
 
-type square struct {
+func main() {
+	s := Square{
+		length: 5,
+		width:  8,
+	}
+	c := Circle{
+		radius: 7,
+	}
+	info(s)
+	info(c)
+}
+
+type Square struct {
 	length float64
 	width  float64
 }
 
-type circle struct {
+func (s Square) Area() float64 {
+	return s.length * s.width
+
+}
+
+type Circle struct {
 	radius float64
 }
 
-func (s square) area() float64 {
-	return s.length * s.width
-}
-
-func (c circle) area() float64 {
+func (c Circle) Area() float64 {
 	return math.Pi * math.Pow(c.radius, 2)
 }
 
-type shape interface {
-	area() float64
+
+type Shape interface {
+	Area() float64
 }
 
-func info(s shape) float64 {
-	return s.area()
+func info(s Shape) {
+	fmt.Println(s.Area())
 }
 
-func main() {
-	c1 := circle{
-		radius: 4,
-	}
-
-	s1 := square{
-		length: 5,
-		width:  8,
-	}
-
-	fmt.Println(info(c1))
-	fmt.Println(info(s1))
-}
 
 /*
 create a type SQUARE

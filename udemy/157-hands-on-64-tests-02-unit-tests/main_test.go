@@ -1,14 +1,18 @@
 package main
 
-import (
-	"log"
-	"testing"
-)
+import "testing"
 
 func TestAdd(t *testing.T) {
-	got := add(7, 5)
-	want := 12
-	if got != want {
-		log.Fatalf("error - want %v and got %v", want, got)
+	sum := add(1, 2)
+	if sum != 3 {
+		t.Errorf("Wrong Output")
+	}
+}
+
+
+func TestSubtract(t *testing.T) {
+	diff := subtract(2, 1)
+	if diff != 1 {
+		t.Errorf("Wrong Output")
 	}
 }

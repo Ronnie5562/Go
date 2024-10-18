@@ -2,29 +2,35 @@ package main
 
 import "fmt"
 
+
 func main() {
-	xi := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	xi := []int{0,1,2,3,4,5,6,7,8,9,10}
 
 	fmt.Println(foo(xi...))
-
 	fmt.Println(bar(xi))
 }
 
-func foo(ii ...int) int {
-	t := 0
-	for _, v := range ii {
-		t += v
+func foo(variadic ...int) int {
+	sum := 0
+
+	for _, value := range variadic {
+		sum += value
 	}
-	return t
+
+	return sum
 }
 
-func bar(ii []int) int {
-	t := 0
-	for _, v := range ii {
-		t += v
+
+func bar(slice_v []int) int {
+	sum := 0
+
+	for _, value := range slice_v {
+		sum += value
 	}
-	return t
+
+	return sum
 }
+
 
 /*
 create a func with the identifier foo that

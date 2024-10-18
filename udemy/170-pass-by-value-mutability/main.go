@@ -10,6 +10,10 @@ func sliceDelta(li []int){
 	li[0] = 99
 }
 
+func mapDelta(md map[string]int, name string) {
+	md[name] = 99
+}
+
 func main() {
 	a := 40
 	fmt.Println(a)
@@ -23,6 +27,10 @@ func main() {
 
 	m := map[string] int {
 		"James": 32,
+		"Miss Moneypenny": 27,
 	}
+	fmt.Println(m)
+
+	mapDelta(m, "James")
 	fmt.Println(m)
 }
