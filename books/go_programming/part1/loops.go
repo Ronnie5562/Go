@@ -6,6 +6,11 @@ func main() {
 	loopToTen()
 	loopOverSlice()
 	loopOverSliceWithRange()
+
+	goto STOP // Using goto to jump to the STOP label
+	fmt.Println("This line will be skipped due to goto")
+	STOP:
+		fmt.Println("Used goto to display the STOP LABEL")
 }
 
 func loopToTen() {
