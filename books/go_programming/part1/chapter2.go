@@ -6,7 +6,6 @@ import (
 	"time"
 )
 
-
 func main() {
 	fmt.Println("Chapter 2: Command and Control")
 	fmt.Println()
@@ -28,7 +27,6 @@ func main() {
 	fmt.Println()
 }
 
-
 func valiateInput(input int) error {
 	if input < 0 {
 		return errors.New("Input cannot be a negative number")
@@ -41,7 +39,6 @@ func valiateInput(input int) error {
 	}
 }
 
-
 func isEven(input int) {
 	if err := valiateInput(input); err != nil {
 		fmt.Println(err)
@@ -51,7 +48,6 @@ func isEven(input int) {
 		fmt.Println("The input value is odd")
 	}
 }
-
 
 func switchCase() {
 	dayBorn := time.Monday
@@ -74,7 +70,6 @@ func switchCase() {
 	}
 }
 
-
 func loops() {
 	for i := 0; i < 5; i++ {
 		fmt.Println(i)
@@ -85,11 +80,10 @@ func loops() {
 		fmt.Printf("Index: %d, Name: %s\n", index, name)
 	}
 
-
-	config := map[string]string {
-		"debug": "1",
+	config := map[string]string{
+		"debug":    "1",
 		"logLevel": "warn",
-		"version": "1.2.1",
+		"version":  "1.2.1",
 	}
 
 	for key, value := range config {
@@ -97,14 +91,13 @@ func loops() {
 	}
 }
 
-
 func fizzBuzz(input int) {
 	for i := 1; i <= input; i++ {
-		if (i % 3 == 0) && (i % 5 == 0) {
+		if (i%3 == 0) && (i%5 == 0) {
 			fmt.Println("FizzBuzz")
-		} else if (i % 3 == 0) {
+		} else if i%3 == 0 {
 			fmt.Println("Fizz")
-		} else if (i % 5 == 0) {
+		} else if i%5 == 0 {
 			fmt.Println("Buzz")
 		} else {
 			fmt.Println(i)
