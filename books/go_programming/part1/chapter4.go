@@ -6,7 +6,6 @@ func main() {
 	fmt.Println("Chapter 4: Complex Types")
 	fmt.Println()
 
-
 	fmt.Println("Array")
 	Array()
 	fmt.Println()
@@ -23,12 +22,10 @@ func main() {
 	structs()
 	fmt.Println()
 
-
 	fmt.Println("Struct Embeddings and Composition")
 	struct_embeddings_and_composition()
 	fmt.Println()
 }
-
 
 func Array() {
 	var arr [10]int
@@ -40,7 +37,6 @@ func Array() {
 	arr3 := [...]int{1, 2, 3, 4, 5}
 	fmt.Println(len(arr3))
 }
-
 
 func Slice() {
 	var slice []int
@@ -76,12 +72,11 @@ func Slice() {
 
 	copyl, copy2, copied := copyNoLink()
 	fmt.Print("Copy No Link: ", copyl, copy2)
-	fmt. Printf(" (Number of elements copied %v)\n", copied)
+	fmt.Printf(" (Number of elements copied %v)\n", copied)
 
 	a1, a2 := appendNoLink()
 	fmt.Println("Append No Link:", a1, a2)
 }
-
 
 func linked() (int, int, int) {
 	s1 := []int{1, 2, 3, 4, 5}
@@ -95,7 +90,6 @@ func linked() (int, int, int) {
 	return s1[2], s2[2], s3[2]
 }
 
-
 func noLink() (int, int) {
 	s1 := []int{1, 2, 3, 4, 5}
 
@@ -106,7 +100,6 @@ func noLink() (int, int) {
 
 	return s1[3], s2[3]
 }
-
 
 func capLinked() (int, int) {
 	s1 := make([]int, 5, 10)
@@ -122,7 +115,6 @@ func capLinked() (int, int) {
 	return s1[3], s2[3]
 }
 
-
 func capNoLink() (int, int) {
 	s1 := make([]int, 5, 10)
 
@@ -137,7 +129,6 @@ func capNoLink() (int, int) {
 	return s1[3], s2[3]
 }
 
-
 func copyNoLink() (int, int, int) {
 	s1 := []int{1, 2, 3, 4, 5}
 
@@ -149,7 +140,6 @@ func copyNoLink() (int, int, int) {
 
 	return s1[3], s2[3], copied
 }
-
 
 func appendNoLink() (int, int) {
 	s1 := []int{1, 2, 3, 4, 5}
@@ -185,11 +175,10 @@ func maps() {
 	fmt.Println("Value:", v2, "Present:", ok2)
 }
 
-
 func structs() {
 	type person struct {
 		name string
-		age int
+		age  int
 	}
 
 	p := person{name: "John", age: 20}
@@ -206,7 +195,6 @@ func structs() {
 	fmt.Println(p)
 }
 
-
 type name string
 
 type location struct {
@@ -215,7 +203,7 @@ type location struct {
 }
 
 type size struct {
-	width int
+	width  int
 	height int
 }
 
@@ -224,7 +212,6 @@ type dot struct {
 	location
 	size
 }
-
 
 func getDots() []dot {
 	dot0 := dot{}
@@ -238,13 +225,11 @@ func getDots() []dot {
 	dot2.width = 100
 	dot2.height = 200
 
-
 	dot3 := dot{
-		name: "B",
+		name:     "B",
 		location: location{x: 10, y: 20},
-		size: size{width: 200, height: 400},
+		size:     size{width: 200, height: 400},
 	}
-
 
 	dot4 := dot{}
 	dot4.name = "C"
@@ -256,7 +241,6 @@ func getDots() []dot {
 	return []dot{dot0, dot1, dot2, dot3, dot4}
 }
 
-
 func struct_embeddings_and_composition() {
 	dots := getDots()
 
@@ -264,5 +248,3 @@ func struct_embeddings_and_composition() {
 		fmt.Printf("dot%v: %#v\n", i, dots[i])
 	}
 }
-
-
