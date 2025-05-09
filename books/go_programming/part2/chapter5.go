@@ -11,13 +11,16 @@ func main() {
 	variadic(10, 20, 10)
 	fmt.Println()
 
-
 	fmt.Println()
 	fmt.Println("Anonymous functions")
 	message := "Hey Rony!"
 	func(str string) {
 		fmt.Println("This is how to declare an anon function.")
 		fmt.Println(str)
+
+		// This can access the variable message from the outer scope
+		// because it is a closure.
+		fmt.Println(message)
 	}(message)
 
 	// Create an anon
@@ -30,7 +33,6 @@ func main() {
 	fmt.Println()
 }
 
-
 func variadic(nums ...int) {
 	fmt.Println(nums)
 	fmt.Printf("%T\n", nums)
@@ -38,7 +40,5 @@ func variadic(nums ...int) {
 
 }
 
-// Closure
-// Regular functions cannot reference variables outside of themselves; however,
+// Closures are a form of anonymous functions. Regular functions cannot reference variables outside of themselves; however,
 // an anonymous function can reference variables external to their definition
-
