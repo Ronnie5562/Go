@@ -10,13 +10,11 @@ func main() {
 	c.Greeting()
 }
 
-
 type Speaker interface {
 	Speak() string
 }
 
 type cat struct {
-
 }
 
 func (c cat) Greeting() {
@@ -26,4 +24,3 @@ func (c cat) Greeting() {
 func (c cat) Speak() string {
 	return "Purr Meow"
 }
-
