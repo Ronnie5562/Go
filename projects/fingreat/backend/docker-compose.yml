@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: fingreat_postgres
+    environment:
+      POSTGRES_USER: fingreat_user
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: fingreat_db
+    ports:
+      - "5432:5432" # Expose PostgreSQL on localhost:5432
+
+  postgres-live:
+    image: postgres:15-alpine
+    container_name: fingreat_postgres_live
+    environment:
+      POSTGRES_USER: fingreat_user
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: fingreat_db_live
+    ports:
+      - "5433:5432" # Expose PostgreSQL on localhost:5433
